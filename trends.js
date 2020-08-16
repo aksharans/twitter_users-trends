@@ -1,4 +1,8 @@
+const express = require('express');
+// const location = require('./get_trends');
+const location = 1;
 require('dotenv').config();
+
 
 let Twitter = require('twitter');
 
@@ -7,11 +11,12 @@ let client = new Twitter({
     consumer_secret: process.env.TWITTER_CONSUMER_SECRET,
     bearer_token: process.env.TWITTER_BEARER_TOKEN
   });
-client.get('trends/place', {id: 1}, function(error, tweets, response) {
-    //console.log(tweets[0].trends);
-    // let x = tweets[0];
-    // console.log(JSON.parse(JSON.stringify(x)));
+
+client.get('trends/place', {id: location}, function(error, tweets, response) {
+    module.exports.trends = tweets[0].trends;
+    module.exports.location = tweets[0].locations[0].name;
 });
+
 
 
 

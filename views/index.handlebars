@@ -1,6 +1,14 @@
 <h1 class="text-primary">Twitter Trends</h1>
  
 
+<form action="/trends" method="POST">
+    <label for="name"> Name</label>
+    <input type="text" name="name">
+    <input type="submit" value="add">
+</form>
+
+<h1>{{loc}}</h1>
+
 <ul>
     {{#each data}}
         <li>{{this.name}}</li>
