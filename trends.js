@@ -1,12 +1,10 @@
 const express = require('express');
-// const location = require('./get_trends');
 const location = 1;
 require('dotenv').config();
 
+const Twitter = require('twitter');
 
-let Twitter = require('twitter');
-
-let client = new Twitter({
+const client = new Twitter({
     consumer_key: process.env.TWITTER_CONSUMER_KEY,
     consumer_secret: process.env.TWITTER_CONSUMER_SECRET,
     bearer_token: process.env.TWITTER_BEARER_TOKEN

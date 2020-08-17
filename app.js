@@ -12,13 +12,13 @@ app.set('view engine', 'handlebars');
 app.use(express.json());
 app.use(express.urlencoded({ extended: false}));
 
+
 app.get('/', (req, res) => {
 
-
     const twit = require('./trends');
-    res.render('index', {loc: twit.location, data: twit.trends});
-
-    console.log(req.body);
+    setTimeout(function(){
+        res.render('index', {loc: twit.location, data: twit.trends});
+    }, 400);
 
 });
 
@@ -28,30 +28,38 @@ app.post('/trends', (req,res) => {
 
     require('dotenv').config();
 
+    const Twitter = require('twitter');
 
-    let Twitter = require('twitter');
-
-    let client = new Twitter({
+    const client = new Twitter({
         consumer_key: process.env.TWITTER_CONSUMER_KEY,
         consumer_secret: process.env.TWITTER_CONSUMER_SECRET,
         bearer_token: process.env.TWITTER_BEARER_TOKEN
     });
 
-    client.get('trends/place', {id: Number(req.body.name)}, function(error, tweets, response) {
-        let trends = tweets[0].trends;
-        let location = tweets[0].locations[0].name;
-        res.render('trends', {loc: location, data: trends});
+    const locations_list = require('./trends_locations');
+    const result = locations_list.find(obj =>{
+        return obj.name == req.body.name;
+    });
+    if (typeof result === 'undefined') {
+        res.redirect('/');
+    }
+    const woeid = result.woeid;
+
+    client.get('trends/place', {id: Number(woeid)}, function(error, tweets, response) {  
+        if (error) {
+            res.redirect('/');
+        }  else {
+            //console.log(tweets[0]);
+            let trends = tweets[0].trends;
+            let location = tweets[0].locations[0].name;
+            res.render('trends', {loc: location, data: trends});
+        }
+        
     });
 
-    //res.redirect('/');
 });
 
 
-
-
-
-
 app.use(express.static(path.join(__dirname, '/public')));
-
 
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
