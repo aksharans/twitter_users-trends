@@ -1,17 +1,62 @@
-<h1 class="text-primary">Twitter Trends</h1>
- 
 
-<form action="/trends" method="POST">
-    <label for="name"> Name</label>
-    <input type="text" name="name">
-    <input type="submit" value="add">
-</form>
+<div class="title">
+    <h1>Twitter Followers/ing &amp; Trends</h1>
+</div>
 
-<h1>{{loc}}</h1>
 
-<ul>
-    {{#each data}}
-        <li>{{this.name}}</li>
-    {{/each}}
-</ul>
+<div class="main-trends"> 
+
+    <h1 class="text-success">Twitter Trends</h1>
+
+    <div class="search-trends"> 
+        <form action="/trends" method="POST">
+            <input type="text" placeholder="Enter a location" name="name">
+            <input type="submit" class="btn-success" value="search">
+        </form>
+
+        <h6> <a href="https://nations24.com/world-wide" target="_blank">
+        (CLICK THIS) Enter a location according to its name or woeid. <br>
+        If the entry is invalid, you will be redirected back to this page. <br>
+        Otherwise, you will be forwarded to the trends page. <br>
+        </a></h6>
+
+    </div>
+
+    <div class="main-display-trends">
+        <h2 class="text-primary">Location: {{loc}}</h1>
+
+        <!--
+        <ul>
+            {{#each data}}
+                <li><a href="{{this.url}}" target="_blank">{{this.name}}</a>, {{this.tweet_volume}}</li>
+            {{/each}}
+        </ul>
+        -->
+
+        <table class="table">
+            <thead>
+                <tr>
+                <th>Topic &amp; Link</th>
+                <th>Tweets</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each data}}
+                <tr>
+                <td><a href="{{this.url}}" target="_blank">{{this.name}}</a></td>   
+                <td style="color: darkorange">{{this.tweet_volume}}</td>
+                </tr>
+                {{/each}}
+            </tbody>
+
+        </table>
+            
+
+
+
+    </div>
+
+
+
+</div>
 

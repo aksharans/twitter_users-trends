@@ -24,7 +24,6 @@ app.get('/', (req, res) => {
 
 
 app.post('/trends', (req,res) => {
-    console.log(req.body);
 
     require('dotenv').config();
 
@@ -37,26 +36,26 @@ app.post('/trends', (req,res) => {
     });
 
     const locations_list = require('./trends_locations');
-    const result = locations_list.find(obj =>{
-        return obj.name == req.body.name;
+    const result = locations_list.find(obj => {
+        return obj.name == req.body.name || obj.woeid == req.body.name;
     });
     if (typeof result === 'undefined') {
         res.redirect('/');
+    } else {
+
+        const woeid = result.woeid;
+        client.get('trends/place', {id: Number(woeid)}, function(error, tweets, response) {  
+            if (error) {
+                res.redirect('/');
+            }  else {
+                let trends = tweets[0].trends;
+                let location = tweets[0].locations[0].name;
+                res.render('trends', {loc: location, data: trends});
+            }
+            
+        });
     }
-    const woeid = result.woeid;
-
-    client.get('trends/place', {id: Number(woeid)}, function(error, tweets, response) {  
-        if (error) {
-            res.redirect('/');
-        }  else {
-            //console.log(tweets[0]);
-            let trends = tweets[0].trends;
-            let location = tweets[0].locations[0].name;
-            res.render('trends', {loc: location, data: trends});
-        }
-        
-    });
-
+  
 });
 
 

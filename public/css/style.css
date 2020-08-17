@@ -1,3 +1,61 @@
-body {
-    background-color: grey;
+html body{
+    background-color: black;
+    color: white;
+}
+
+.main-display-trends a:link{
+    text-decoration: none !important;    
+}
+
+.title h1{
+    text-align: center;
+    color: blueviolet;
+    font-size: 80px;
+    font-family: "Optima";
+}
+
+.main-trends {
+    margin-left: 55%;
+    margin-top: 10px;
+    position: absolute;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border: 1px solid white;
+    width: 43%;
+    height: 80%;
+    padding-left: 10px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    background: rgba(112, 128, 144, 0.185);
+}
+
+.main-trends h1{
+    text-align: center;
+}
+
+.search-trends {
+    display: flex;
+    white-space: nowrap;
+}
+
+.search-trends h6{
+    margin-left: 20px;
+    font-size: 8px;
+}
+
+.main-trends .table{
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+::-webkit-scrollbar-thumb {
+    background: white; 
+}
+::-webkit-scrollbar-track {
+    background: black;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: white;
 }
