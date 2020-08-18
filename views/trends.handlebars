@@ -1,8 +1,36 @@
-<h1>trends</h1>
+<h1 class="text-success" style="text-align: center">Twitter Trends</h1>
 
+
+<!--
 <h1>{{loc}}</h1>
 <ul>
     {{#each data}}
         <li>{{this.name}}</li>
     {{/each}}
 </ul>
+-->
+<div class="trends-display-trends">
+        <h2 class="text-primary">Location: {{loc}}</h1>
+
+        <table class="table">
+            <thead>
+                <tr>
+                <th>Topic &amp; Link</th>
+                <th>Tweets</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each data}}
+                <tr>
+                <td><a href="{{this.url}}" target="_blank">{{this.name}}</a></td>   
+                <td style="color: darkorange">{{this.tweet_volume}}</td>
+                </tr>
+                {{/each}}
+            </tbody>
+
+        </table>
+</div>
+
+<div class="trends-home">
+    <button type="button" class="btn btn-outline-light" id="thome" onclick="location.href='/'">Home</button>
+</div>

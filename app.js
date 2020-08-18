@@ -22,6 +22,11 @@ app.get('/', (req, res) => {
 
 });
 
+app.get('/test', (req, res) => {
+    const test = require('./users');
+    res.send(test);
+});
+
 
 app.post('/trends', (req,res) => {
 
