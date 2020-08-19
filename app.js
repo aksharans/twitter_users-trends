@@ -24,7 +24,14 @@ app.get('/', (req, res) => {
 
 app.get('/test', (req, res) => {
     const test = require('./users');
-    res.send(test);
+    console.log(test);
+    //res.send(test);
+
+    setTimeout(function(){
+        //console.log(test);
+        //res.send(test);
+        res.render('users', {data : test});
+    }, 1000);
 });
 
 
