@@ -33,16 +33,15 @@ function getFollowers(screenName, followers = [], cur = -1, limit = 0) {
 }
 
 
-async function getUser () {
+const x = async function getUser () {
     let user = await getFollowers('BFTB_Chargers');
-    //console.log(user);
     //module.exports = user;
     return user;
 }
 
-console.log(getUser().catch((err)=> {
-    console.log(err);
-}));
 
-module.exports = getUser();
+let a = [];
+x().then(val => a.push(...val)).catch((err) => console.log(err));
+console.log(a);
+module.exports = a;
 
