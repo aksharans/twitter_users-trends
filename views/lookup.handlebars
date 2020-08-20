@@ -1,0 +1,57 @@
+<h1 id="lookup-title">Twitter User Lookup</h1>
+
+<!-- 
+<ul>   
+
+    <li>{{this.description}}</li>
+    <li>{{this.link}}</li>
+    <li>{{this.verified}}</li> 
+</ul>
+-->
+
+<div class="banner">
+    <img src="{{this.banner}}">
+</div>
+
+<div class="picture">
+    <img src="{{this.img}}" class="rounded-circle">
+</div>
+
+<div class="name-handle">
+    <h1 style="font-size: 70px;">{{this.username}}</h1>
+    <h4 style="font-size: 30px;">@{{this.handle}}</h4>
+</div>
+
+<div class="location">
+    <h6>&#x1F4CD;{{this.location}}</h6>
+</div>
+
+<div class="lookup-followers">
+    <h1 style="color:deepskyblue">{{this.followers}}</h1>
+    <h6>followers</h6>
+</div>
+
+<div class="lookup-following">
+    <h1 style="color:lightseagreen">{{this.following}}</h1>
+    <h6>following</h6>
+</div>
+
+<div class="likes">
+    <h1 style="color:mediumaquamarine">{{this.likes}}</h1>
+    <h6>liked tweets</h6>
+</div>
+
+<div class="tweets">
+    <h1 style="color:royalblue">{{this.tweets}}</h1>
+    <h6>tweets &amp; retweets</h6>
+</div>
+
+<div class="lookup-info">
+    <h6>{{this.verified}}</h3>
+    <h5 style="color:lightgoldenrodyellow">{{this.description}}</h1>
+    <h5 style="font-size:16px;"><a href="{{this.link}}" target="_blank">{{this.link}}</a></h6>
+</div>
+
+<div class="lookup-home">
+    <button type="button" class="btn btn-outline-light" id="lhome" onclick="location.href='/'">Home</button>
+</div>

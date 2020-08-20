@@ -15,12 +15,12 @@ html body{
 }
 
 .main-trends {
-    margin-left: 55%;
+    margin-left: 50%;
     margin-top: 10px;
     position: absolute;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     border: 1px solid white;
-    width: 43%;
+    width: 48%;
     height: 80%;
     padding-left: 10px;
     overflow-y: scroll;
@@ -39,12 +39,42 @@ html body{
 
 .search-trends h6{
     margin-left: 20px;
-    font-size: 8px;
+    font-size: 10px;
 }
 
 .main-trends .table{
     color: white;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.main-lookup {
+    margin-left: 20px;
+    margin-top: 17px;
+    height: 240px;
+    width: 46%;
+    border: 1px solid white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background: rgba(112, 128, 144, 0.185);
+}
+
+.main-lookup h1{
+    text-align: center;
+    color: crimson;
+}
+.main-lookup h5{
+    padding: 20px;
+}
+
+.lookup-form form{
+   text-align: center;
+}
+
+.main-followersing {
+    margin-left: 20px;
+    margin-top: 17px;
+    height: 280px;
+    width: 46%;
+    border: 1px solid white;
 }
 
 ::-webkit-scrollbar {
@@ -89,5 +119,97 @@ html body{
 #thome {
     position: absolute;
     margin-top: 45%;
+    margin-left: 48%;
+}
+
+.banner {
+    border: 2px solid white;
+    margin-top: 20px;
+    margin-left: 32%;
+    height: 205px;
+    width: 505px;
+}
+
+.banner img{
+    height: 200px;
+    width: 500px;
+    object-fit: cover;
+
+}
+
+#lookup-title {
+    text-align: center;
+    color: crimson;
+}
+
+.picture img{
+    margin-left: 47%;
+    margin-top: -30px;
+    border: 1px solid white;
+    width: 5%;
+}
+
+.name-handle {
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #2d53ff, 0 0 30px #2dbcff, 0 0 40px #2de6ff, 0 0 50px #532dff, 0 0 75px #2d65ff;
+    letter-spacing: 5px;
+}
+
+.location h6{
+    margin-top: 10px;
+    text-align: center;
+    font-size: 15px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.lookup-followers {
+    margin-left: 15%;
+    margin-top: -60px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.lookup-following {
+    margin-left: 75%;
+    margin-top: -85px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.likes {
+    margin-left: 15%;
+    margin-top: 70px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.tweets {
+    margin-left: 75%;
+    margin-top: -85px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.lookup-info {
+    border: 2px solid white;
+    width: 30%;
+    margin-top: -140px;
+    margin-left: 35%;
+    overflow-y: scroll;
+    height: 150px;
+}
+
+.lookup-info h6{
+    margin-top: 5px;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.lookup-info h5{
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#lhome {
+    position: absolute;
+    margin-top: 25px;
     margin-left: 48%;
 }
