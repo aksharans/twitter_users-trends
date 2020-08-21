@@ -11,8 +11,14 @@ const client = new Twitter({
 });
 
 client.get('trends/place', {id: location}, function(error, tweets, response) {
-    module.exports.trends = tweets[0].trends;
-    module.exports.location = tweets[0].locations[0].name;
+    if (error) {
+        module.exports.trends = "error";
+        module.exports.location = "there was an error...";
+    } else {
+        module.exports.trends = tweets[0].trends;
+        module.exports.location = tweets[0].locations[0].name;
+    }
+   
 });
 
 

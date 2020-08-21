@@ -1,0 +1,33 @@
+<h1 id="fwsing-title">User Followers/ing</h1>
+
+<h1 style="text-align: center;">@</h1>
+
+ 
+<div class="fwsing-mutual">
+    <h2> <span style="color:lightgreen">Mutual Followers/Following </span><span style="color:gold">({{mutuals.length}})</span> </h2>
+    <table class="table">
+        <thead></thead> 
+        <tbody>
+            {{#each mutuals}}
+            <tr>
+                <td><a href="https://twitter.com/{{this}}" target="_blank">{{this}}</a></td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>
+
+
+<div class="fwsing-nonmutual">
+    <h2> <span style="color:lightcoral">NonMutual Followers/Following </span><span style="color:gold">({{nonmutuals.length}})</span> </h2>
+    <table class="table">
+        <thead></thead> 
+        <tbody>
+            {{#each nonmutuals}}
+            <tr>
+                <td><a href="https://twitter.com/{{this}}" target="_blank">{{this}}</a></td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>

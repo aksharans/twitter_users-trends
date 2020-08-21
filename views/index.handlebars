@@ -6,7 +6,7 @@
 
 <div class="main-trends"> 
 
-    <h1 class="text-success">Twitter Trends</h1>
+    <h1 class="text-success">Trends</h1>
 
     <div class="search-trends"> 
         <form action="/trends" method="POST">
@@ -65,7 +65,22 @@
 </div>
 
 <div class="main-followersing">
+    <h1>User Followers/ing</h1>
+     <div class="fwsing-form">
+        <form action="/lookup" method="POST">
+            <input type="text" placeholder="Enter a username" name="name2">
+            <input type="submit" class="btn-warning" value="search">
+        </form>
+    </div>
 
+    <h5>Enter a username (the twitter handle) to display the users'
+        followers and following. If the entry is invalid, you will be 
+        redirected back to this page. Limit is 1000 followers/following.
+    </h5>
+</div>
+
+<div class="abt">
+    <button type="button" class="btn btn-outline-light" id="about" onclick="location.href='/'">ABOUT</button>
 </div>
 
 

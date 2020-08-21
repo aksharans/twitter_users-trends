@@ -72,9 +72,30 @@ html body{
 .main-followersing {
     margin-left: 20px;
     margin-top: 17px;
-    height: 280px;
+    height: 240px;
     width: 46%;
     border: 1px solid white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.main-followersing h1{
+    text-align: center;
+    color: khaki;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.main-followersing h5{
+    padding: 20px;
+}
+
+.fwsing-form form{
+    text-align: center;
+}
+
+#about {
+    position: absolute;
+    margin-top: 30px;
+    margin-left: 20%;
 }
 
 ::-webkit-scrollbar {
@@ -213,3 +234,44 @@ html body{
     margin-top: 25px;
     margin-left: 48%;
 }
+
+#fwsing-title {
+    text-align: center;
+    color: khaki;
+    margin-bottom: 10px;
+}
+
+.fwsing-mutual {
+    margin-left: 2%;
+    height: 75%;
+    width: 45%;
+    position: absolute;
+    border: 3px solid lightgreen;  
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    overflow-y: scroll;
+    overflow-x: hidden; 
+    background: rgba(112, 128, 144, 0.185);
+}
+
+.fwsing-nonmutual {
+    margin-left: 53%;
+    height: 75%;
+    width: 45%;
+    position: absolute;
+    border: 3px solid lightcoral;  
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    overflow-y: scroll;
+    overflow-x: hidden; 
+    background: rgba(112, 128, 144, 0.185);
+}
+
+.fwsing-mutual .table{
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.fwsing-nonmutual .table{
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+

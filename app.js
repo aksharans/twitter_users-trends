@@ -58,18 +58,6 @@ app.post('/trends', (req,res) => {
 });
 
 
-app.get('/test', (req, res) => {
-    const test = require('./users');
-    //console.log(test);
-    //res.send(test);
-    setTimeout(function(){
-        //console.log(test);
-        //res.send(test);
-        res.render('users', {data : test});
-    }, 400);
-});
-
-
 app.post('/lookup', (req, res) => {
     const input = req.body.name1;
 
@@ -110,6 +98,21 @@ app.post('/lookup', (req, res) => {
         }
 
     });
+});
+
+
+app.get('/fwsing', (req, res) => {
+    const users = require('./followersing');
+
+    setTimeout(function(){
+        let following = users.twit_following;
+        let followers = users.twit_followers;
+        let mutual = following.filter(el => followers.includes(el));
+        let nonmutual = following.filter(el => !followers.includes(el));
+
+        res.render('followersing', {following : users.twit_following, followers: users.twit_followers,
+        mutuals : mutual, nonmutuals : nonmutual });
+    }, 400);
 });
 
 
