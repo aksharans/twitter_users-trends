@@ -275,3 +275,37 @@ html body{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+#fhome {
+    position: absolute;
+    margin-top: 41%;
+    margin-left: 48%; 
+}
+
+
+.card {
+    margin-top: 20px;
+    margin-left: 75px;
+    margin-right: 35px; 
+    width: 40%;
+    display: inline-block;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.info {
+    border: 2px solid white;
+    margin-top: 1%;
+    height: 100px;
+    width: 400px;
+    margin-left: 37%;
+}
+
+#info {
+    margin-left: 38%;
+}
+
+#ahome {
+    position: absolute;
+    margin-top: 1%;
+    margin-left: 48%; 
+}
+

@@ -61,7 +61,6 @@ app.post('/trends', (req,res) => {
 app.post('/lookup', (req, res) => {
     const input = req.body.name1;
 
-    const express = require('express');
     require('dotenv').config();
 
     const Twitter = require('twitter');
@@ -101,19 +100,99 @@ app.post('/lookup', (req, res) => {
 });
 
 
-app.get('/fwsing', (req, res) => {
-    const users = require('./followersing');
+app.post('/fwsing', (req, res) => {
+
+    const input = req.body.name2;
+
+    require('dotenv').config();
+
+    const Twitter = require('twitter');
+
+    const client = new Twitter({
+        consumer_key: process.env.TWITTER_CONSUMER_KEY,
+        consumer_secret: process.env.TWITTER_CONSUMER_SECRET,
+        bearer_token: process.env.TWITTER_BEARER_TOKEN
+    });
+
+
+    function getFollowing(screenName, following = [], cur = -1, limit = 0) {
+        return new Promise ((resolve, reject) => {
+            client.get('/friends/list', {screen_name : screenName, cursor : cur, count: 200}, function (error, data, res){
+                if (error){
+                    reject(err);
+                } else {
+                    cur = data.next_cursor;
+                    let user_list = data.users
+                    user_list.forEach(function(item){
+                        following.push(item.screen_name);
+                    });
+                    limit += 1;
+                    if (cur > 0 && limit < 5) {
+                        return resolve(getFollowing(screenName, following, cur, limit));
+                      } else {
+                        return resolve([].concat(...following));
+                      }
+                }
+            });
+        });
+    
+    }
+
+    const x = async function following () {
+        let user = await getFollowing(input);
+        return user;
+    }
+    let following_list = [];
+    x().then(val => following_list.push(...val)).catch((err) => following_list("error"));
+
+
+    function getFollowers(screenName, followers = [], cur = -1, limit = 0) {
+        return new Promise ((resolve, reject) => {
+            client.get('/followers/list', {screen_name : screenName, cursor : cur, count: 200}, function (error, data, res){
+                if (error){
+                    reject(err);
+                } else {
+                    cur = data.next_cursor;
+                    let user_list = data.users
+                    user_list.forEach(function(item){
+                        followers.push(item.screen_name);
+                    });
+                    limit += 1;
+                    if (cur > 0 && limit < 5) {
+                        return resolve(getFollowers(screenName, followers, cur, limit));
+                      } else {
+                        return resolve([].concat(...followers));
+                      }
+                }
+            });
+        });
+    
+    }
+    
+    const y = async function followers () {
+        let user = await getFollowers(input);
+        return user;
+    }
+    let follower_list = [];
+    y().then(val => follower_list.push(...val)).catch((err) => follower_list.push("error"));   
+
 
     setTimeout(function(){
-        let following = users.twit_following;
-        let followers = users.twit_followers;
-        let mutual = following.filter(el => followers.includes(el));
-        let nonmutual = following.filter(el => !followers.includes(el));
+        let mutual = following_list.filter(el => follower_list.includes(el));
+        let nonmutual = following_list.filter(el => !follower_list.includes(el));
+        res.render('followersing', {at : input, mutuals : mutual, nonmutuals : nonmutual});
+    }, 1200);
+    
 
-        res.render('followersing', {following : users.twit_following, followers: users.twit_followers,
-        mutuals : mutual, nonmutuals : nonmutual });
-    }, 400);
 });
+
+
+app.get('/about', (req, res)=> {
+    res.render('about');
+});
+
+
+
 
 
 app.use(express.static(path.join(__dirname, '/public')));

@@ -1,4 +1,3 @@
-const express = require('express');
 require('dotenv').config();
 
 const Twitter = require('twitter');
@@ -42,8 +41,6 @@ let following_list = [];
 x().then(val => following_list.push(...val)).catch((err) => console.log(err));
 module.exports.twit_following = following_list;
 
-
-/* */
 
 function getFollowers(screenName, followers = [], cur = -1, limit = 0) {
     return new Promise ((resolve, reject) => {
