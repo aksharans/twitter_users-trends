@@ -119,7 +119,7 @@ app.post('/fwsing', (req, res) => {
         return new Promise ((resolve, reject) => {
             client.get('/friends/list', {screen_name : screenName, cursor : cur, count: 200}, function (error, data, res){
                 if (error){
-                    reject(err);
+                    reject(error);
                 } else {
                     cur = data.next_cursor;
                     let user_list = data.users
@@ -143,14 +143,14 @@ app.post('/fwsing', (req, res) => {
         return user;
     }
     let following_list = [];
-    x().then(val => following_list.push(...val)).catch((err) => following_list("error"));
+    x().then(val => following_list.push(...val)).catch((err) => following_list.push("there was an error"));
 
 
     function getFollowers(screenName, followers = [], cur = -1, limit = 0) {
         return new Promise ((resolve, reject) => {
             client.get('/followers/list', {screen_name : screenName, cursor : cur, count: 200}, function (error, data, res){
                 if (error){
-                    reject(err);
+                    reject(error);
                 } else {
                     cur = data.next_cursor;
                     let user_list = data.users
@@ -174,7 +174,7 @@ app.post('/fwsing', (req, res) => {
         return user;
     }
     let follower_list = [];
-    y().then(val => follower_list.push(...val)).catch((err) => follower_list.push("error"));   
+    y().then(val => follower_list.push(...val)).catch((err) => follower_list.push("there was an error"));   
 
 
     setTimeout(function(){
