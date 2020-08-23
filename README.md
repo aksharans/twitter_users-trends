@@ -6,7 +6,7 @@ Node webapp that utilizes Twitter API to display user information (including # o
 
 
 
-## Authentication
+## Authentication & Postman
 
 
 ## Accessing Twitter API & endpoints
