@@ -143,7 +143,7 @@ app.post('/fwsing', (req, res) => {
         return user;
     }
     let following_list = [];
-    x().then(val => following_list.push(...val)).catch((err) => following_list.push("there was an error"));
+    x().then(val => following_list.push(...val)).catch((err) => following_list.push(JSON.stringify(err[0])));
 
 
     function getFollowers(screenName, followers = [], cur = -1, limit = 0) {
@@ -174,14 +174,14 @@ app.post('/fwsing', (req, res) => {
         return user;
     }
     let follower_list = [];
-    y().then(val => follower_list.push(...val)).catch((err) => follower_list.push("there was an error"));   
+    y().then(val => follower_list.push(...val)).catch((err) => follower_list.push(JSON.stringify(err[0])));   
 
 
     setTimeout(function(){
         let mutual = following_list.filter(el => follower_list.includes(el));
         let nonmutual = following_list.filter(el => !follower_list.includes(el));
         res.render('followersing', {at : input, mutuals : mutual, nonmutuals : nonmutual});
-    }, 1200);
+    }, 5000);
     
 
 });
