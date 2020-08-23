@@ -24,7 +24,7 @@ Node webapp that utilizes Twitter API to display user information (including # o
 ## Info/Dependencies
 Dependencies found in *package.json* and *package-lock.json*
 
-Created using Node.js (along with the express,express-handlebars, and twitter modules)
+Created using Node.js (along with the express, express-handlebars, and twitter modules)
 
 CSS using the Bootstrap CDN
 
