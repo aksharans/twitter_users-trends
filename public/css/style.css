@@ -53,6 +53,7 @@ html body{
     height: 240px;
     width: 46%;
     border: 1px solid white;
+    overflow-y: scroll;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     background: rgba(112, 128, 144, 0.267);
 }
@@ -72,9 +73,10 @@ html body{
 .main-followersing {
     margin-left: 20px;
     margin-top: 17px;
-    height: 260px;
+    height: 280px;
     width: 46%;
     border: 1px solid white;
+    overflow-y: scroll;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     background: rgba(112, 128, 144, 0.267);
 }
@@ -95,7 +97,7 @@ html body{
 
 #about {
     position: absolute;
-    margin-top: 30px;
+    margin-top: 20px;
     margin-left: 20%;
 }
 
