@@ -21,7 +21,7 @@ After that, the tokens were assigned to the environment variables TWITTER_CONSUM
 
 
 
-## Accessing Twitter API & endpoints
+## Accessing Twitter API & Endpoints
 
 ***NOTE: This project uses the Twitter API v1.1 endpoints. Twitter is in early access of and will migrate to v2 endpoints.***
 
@@ -35,11 +35,19 @@ After that, the tokens were assigned to the environment variables TWITTER_CONSUM
 
 ## Limits
 
+Since this project uses the Standard API, there are rate limits to all GET Endpoints.
+
+- User Lookup: 3000 requests/15 minutes
+- User Followers/ing: 15 requests/15 minutes 
+- Trends: 75 requests/15 minutes
+
+Especially for User Followers/ing since each response is cursored and includes a max of 200 users, there is a very short limit to the amount of requests the app can perform, even with setting a cap of a maximum of 5 requests (1000 users) for each lookup of followers and following.
+
+
 ## Info/Dependencies
 Dependencies found in *package.json* and *package-lock.json*
 
-Created using Node.js (along with the express, express-handlebars, and twitter modules)
-.
+Created using Node.js (along with the express, express-handlebars, and twitter modules).
 CSS using the Bootstrap CDN
 
 Hosted on Heroku, using the Heroku CLI
