@@ -36,6 +36,10 @@ For User Lookup, a POST request was used to get the input as the request paramet
 
 ### User Followers/ing
 
+For User Followers/ing, a POST request was used to get the input as the request parameter and then a GET request was sent to **friends/list** and **followers/list**  using Async/Await and Promises with paramaters {screen_name : screenName, cursor : cur, count: 200}, where screen_name is the Twitter handle @, cursor is the current cursor that contains a list of followers/following, with a max of count = 200. The response JSON data recieved is a *cursored collection of user objects*:
+- *users.screen_name* is pushed for each user object according to the functions and limits. The followers/following lists are then filtered to obtain the mutual and nonmutual users.
+
+
 ### Trends
 
 For the Worldwide trends, the client object sends a GET request to **trends/place** with parameter {id : location}, where the id is a woeid and location = 1 for worldwide. The response JSON data recieved is an array of *trends objects*:
@@ -45,7 +49,7 @@ For the Worldwide trends, the client object sends a GET request to **trends/plac
 A similar method for the trends was used in the trends lookup except a POST request was used to get the request parameter and then filter it through the JSON data in *trends_locations.js* to find the location by its name or woeid, and also return the woeid. A GET request was then sent with the parameter {id : woeid}.
 
 
-## Limits
+## Limits & Errors
 
 Since this project uses the Standard API, there are rate limits to all GET Endpoints.
 
@@ -54,6 +58,10 @@ Since this project uses the Standard API, there are rate limits to all GET Endpo
 - Trends: 75 requests/15 minutes
 
 Especially for User Followers/ing since each response is cursored and includes a max of 200 users, there is a very short limit to the amount of requests the app can perform, even with setting a cap of a maximum of 5 requests (1000 users) for each lookup of followers and following.
+
+Errors may occur if:
+- the entry of a user or location is invalid 
+- the rate limit for any endpoint/functionality is reached
 
 
 ## Info/Dependencies
