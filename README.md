@@ -25,7 +25,7 @@ After that, the tokens were assigned to the environment variables TWITTER_CONSUM
 
 ***NOTE: This project uses the Twitter API v1.1 endpoints. Twitter is in early access of and will migrate to v2 endpoints.***
 
-Base url for all GET requests is https://api.twitter.com/1.1/[endpoint/endpoint], where the endpoints are indicated below.
+Base url for all GET requests is https://api.twitter.com/1.1/[endpoint/endpoint], defined by the Twitter client object, where the endpoints are indicated below.
 
 
 ### User Lookup
