@@ -3,7 +3,7 @@
 
 ## About
 
-This Node.js webapp was created to access and display information from Twitter using the Twitter API. There are 3 main functionalities.
+This Node.js webapp was created to access and display information from Twitter using the Twitter API. There are 3 main functionalities:
 1. **user lookup for basic user information** (username/handle, follower/following count, likes/tweets count, profile/banner picture, verified status, location, description/urls, and a link to the user's page on Twitter.
 2. **user lookup for a display of the total count and names of the mutual and nonmutual followers.** Mutual is defined when both the entry user is following the other user and is followed by the other user. Nonmutual is when either of those conditions are not met.
 3. **trends lookup for any location** (worldwide, country, city) in the world as represented in the Where On Earth ID (woeid) list. Entries can be typed by both the location's name as well as the specific woeid number (for cases in which the user is not able to type out the name or certain characters)
