@@ -25,12 +25,24 @@ After that, the tokens were assigned to the environment variables TWITTER_CONSUM
 
 ***NOTE: This project uses the Twitter API v1.1 endpoints. Twitter is in early access of and will migrate to v2 endpoints.***
 
+Base url for all GET requests is https://api.twitter.com/1.1/[endpoint/endpoint], where the endpoints are indicated below.
+
 
 ### User Lookup
+ 
+For User Lookup, a POST request was used to get the input as the request parameter and then a GET request was sent to **users/lookup** with parameter {screen_name : input}, where screen_name is the Twitter handle @. The response JSON data recieved is a *user object*:
+- *data[0].* name, screen_name, location, description, url, followers_count, friends_count, favourites_count, statuses_count, verified, profile_image_url_https, profile_banner_url
+
 
 ### User Followers/ing
 
 ### Trends
+
+For the Worldwide trends, the client object sends a GET request to **trends/place** with parameter {id : location}, where the id is a woeid and location = 1 for worldwide. The response JSON data recieved is an array of *trends objects*:
+- *tweets[0].trends*, which was then passed to *index.handlebars* where a For-Each loop gathered the trend. name, url, and volume.
+- *tweets[0].locations[0].name*, which is a String of the location.
+
+A similar method for the trends was used in the trends lookup except a POST request was used to get the request parameter and then filter it through the JSON data in *trends_locations.js* to find the location by its name or woeid, and also return the woeid. A GET request was then sent with the parameter {id : woeid}.
 
 
 ## Limits
