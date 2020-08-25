@@ -78,6 +78,7 @@ Hosted on Heroku, using the Heroku CLI
 ## Useful Resources
 - Twitter API: [twitter](https://developer.twitter.com/en/docs)
 - Node/Express: [node](https://www.youtube.com/watch?v=fBNz5xF-Kx4&list=PLrqKr-xuh9fc2M5R8sOOXc4efwT4wd4fN&index=1), [express](https://www.youtube.com/watch?v=L72fhGm1tfE&list=PLrqKr-xuh9fc2M5R8sOOXc4efwT4wd4fN&index=2)
+- Node Twitter Module: [npm](https://www.npmjs.com/package/twitter), [github](https://github.com/desmondmorris/node-twitter) (only supports v1.1 endpoints as of now)
 - Obtaining authentication, Postman, GET: [medium](https://medium.com/@federicojordn/simplertapp-twitter-search-api-with-node-js-29e4664db299), [stack overflow](https://stackoverflow.com/questions/45078952/twitter-api-application-only-authentication)
 - Handling asynchronous data and cursoring: [stack overflow](https://stackoverflow.com/questions/28008897/node-js-twitter-api-cursors)
 - WoeID information: [nations24](https://nations24.com/)
