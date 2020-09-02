@@ -24,7 +24,6 @@ html body{
     height: 80%;
     padding-left: 10px;
     overflow-y: scroll;
-    overflow-x: hidden;
     background: rgba(112, 128, 144, 0.267);
 }
 
