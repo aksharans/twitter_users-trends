@@ -8,6 +8,7 @@ This Node.js webapp was created to access and display information from Twitter u
 2. **user lookup for a display of the total count and names of the mutual and nonmutual followers.** Mutual is defined when both the entry user is following the other user and is followed by the other user. Nonmutual is when either of those conditions are not met.
 3. **trends lookup for any location** (worldwide, country, city) in the world as represented in the Where On Earth ID (woeid) list and a link to the trend's page on Twitter. Entries can be typed by both the location's name as well as the specific woeid number (for cases in which the user is not able to type out the name or certain characters)
 
+*NOTE: this webapp works/looks better on a computer than mobile* 
 
 ## Authentication & Postman
 
